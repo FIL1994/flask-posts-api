@@ -20,7 +20,6 @@ def create_app(test_config=None):
         posts = db.execute(
             'SELECT * FROM posts'
         ).fetchall()
-        # app.logger.info(posts)
         return to_json(posts)
 
     @app.route('/', methods=['POST'])
