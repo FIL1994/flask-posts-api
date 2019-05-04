@@ -14,11 +14,6 @@ def create_app(test_config=None):
     app.secret_key = 'secret_key'
     app.logger.info("Creating app")
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
-
     @app.route('/', methods=['GET'])
     def index():
         db = get_db()
